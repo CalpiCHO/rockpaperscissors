@@ -14,7 +14,7 @@ function getComputerChoice() {
     return computerSelection;
 }
 
-function playerSelection() {
+function playerSelect() {
     rps = prompt("Please choose rock, paper, or scissors!").toLowerCase();
     switch (rps) {
         case "rock":
@@ -39,38 +39,79 @@ function playerSelection() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 1 && computerSelection === 1) {
-        alert("Rock ties rock! Try again!")
+        console.log("Rock ties rock! Try again!")
+        str = "Rock ties rock! Try again!"
+        return str
     }
 
     if (playerSelection === 1 && computerSelection === 2) {
-        alert("Paper beats rock! You lose!")
+        console.log("Paper beats rock! You lose!")
+        str = "Paper beats rock! You lose!"
+        return str
     }
 
     if (playerSelection === 1 && computerSelection === 3) {
-        alert("Rock beats scissors! You win!")
+        console.log("Rock beats scissors! You win!")
+        str = "Rock beats scissors! You win!"
+        return str
     }
 
     if (playerSelection === 2 && computerSelection === 1) {
-        alert("Paper beats rock! You win!")
+        console.log("Paper beats rock! You win!")
+        str = "Paper beats rock! You win!"
+        return str
     }
 
     if (playerSelection === 2 && computerSelection === 2) {
-        alert("Paper ties paper! Try again!")
+        console.log("Paper ties paper! Try again!")
+        str = "Paper ties paper! Try again!"
+        return str
     }
 
     if (playerSelection === 2 && computerSelection === 3) {
-        alert("Scissors beats paper! You lose!")
+        console.log("Scissors beats paper! You lose!")
+        str = "Scissors beats paper! You lose!"
+        return str
     }
 
     if (playerSelection === 3 && computerSelection === 1) {
-        alert("Rock beats scissors! You lose!")
+        console.log("Rock beats scissors! You lose!")
+        str = "Rock beats scissors! You lose!"
+        return str
     }
 
     if (playerSelection === 3 && computerSelection === 2) {
-        alert("Scissors beats paper! You win!")
+        console.log("Scissors beats paper! You win!")
+        str = "Scissors beats paper! You win!"
+        return str
     }
 
     if (playerSelection === 3 && computerSelection === 3) {
-        alert("Scissors ties scissors! Try again!")
+        console.log("Scissors ties scissors! Try again!")
+        str = "Scissors ties scissors! Try again!"
+        return str
     }
+    
+}
+
+function game() {
+    for (let step = 0; step < 5; step++) {
+        getComputerChoice()
+        playerSelect()
+        playRound(playerSelection, computerSelection)
+        ans = str;
+        
+        if (ans == "Rock beats scissors! You win!" || ans == "Paper beats rock! You win!" || ans == "Scissors beats paper! You win!") {
+            pp = 1 + p++;
+            console.log(pp)
+        }
+
+        if (ans == "Paper beats rock! You lose!" || ans == "Scissors beats paper! You lose!" || ans == "Rock beats scissors! You lose!") {
+            cc = 1 + c++;
+            console.log(cc)
+        }
+    }
+    
+    alert("The score is You:" + " " + pp + " " + "Computer:" + " " + cc)
+    
 }
